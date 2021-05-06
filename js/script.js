@@ -1,6 +1,5 @@
 var array= [];
 var attempts= [];
-var rightNum = [];
 
 while (array.length < 5){
     var nuovoNum = Math.floor(Math.random()*100) + 1;
@@ -25,9 +24,8 @@ setTimeout(function(){
         console.log(attempts);
         controllo(array, attempts);
     }
-}, 3000);
+}, 30000);
 
-document.getElementById('result').innerHTML= 'hai indovinato ' + rightNum.length;
 
 //Functions
 function cercaElemento(elem, array){
@@ -41,7 +39,8 @@ function cercaElemento(elem, array){
 }
 
 function controllo(numeri, tentativi){
-    // confronto i due array e restituisco la quantità di numeri indovinati e quali sono.
+
+    var rightNum = [];
   
     for (var i = 0; i < 5; i++) {
       if (cercaElemento(attempts[i], array)){
