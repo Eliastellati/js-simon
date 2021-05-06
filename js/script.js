@@ -1,6 +1,6 @@
 var array= [];
-var userNum = [];
-
+var rightNum =[];
+score= 0;
 
 for (i = 0; i < 5; i++) {
     numero = getRndInteger(1, 100);
@@ -14,11 +14,13 @@ alert(array);
 
 //Timer 30 secondi?
 
-var timer= setTimeout (userGuess, 30000);
+var timer= setTimeout (userGuess, 3000);
 
-console.log(userNum);
 console.log(array);
 
+// verificare quanti numeri sono stati azzeccati
+
+console.log(rightNum);
 
 
 
@@ -36,6 +38,9 @@ function getRndInteger(min, max) {
 function userGuess(num) {
     for (i = 0 ; i<array.length; i++) {
         guess= parseInt(prompt('inserisci i numeri uno alla volta'));
-        userNum.push(guess);
+        if (guess == array[i]) {
+            rightNum.push(guess);
+        }
     }
 }
+
